@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng 20/10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card-container">
+        <img src="download.jpg" alt="Hoa hồng" class="rose-image">
+        
+        <h1>Chúc Mừng Ngày 20/10!</h1>
+        
+        <p>Nhân ngày Phụ nữ Việt Nam 20/10, xin gửi lời chúc tốt đẹp nhất đến một nửa thế giới. Chúc mẹ luôn xinh đẹp, rạng rỡ và ngập tràn hạnh phúc!</p>
+        
+        <button id="wishButton">Nhận lời chúc đặc biệt!</button>
+        
+        <p id="specialWish" class="hidden-message">
+            Chúc mẹ có một ngày 20/10 thật ý nghĩa, nhận được nhiều hoa, nhiều quà và luôn được yêu thương! 🌹
+        </p>
+    </div>
+
+    <script>
+        // 1. Lấy các phần tử (elements) từ HTML
+        const button = document.getElementById('wishButton');
+        const message = document.getElementById('specialWish');
+
+        // 2. Thêm sự kiện "click" cho nút
+        button.addEventListener('click', function() {
+            // 3. Khi click, kiểm tra xem lời chúc đang ẩn hay hiện
+            
+            // Sử dụng classList.toggle để tự động thêm/xóa class 'show'
+            message.classList.toggle('show');
+
+            // 4. Cập nhật lại nội dung của nút
+            if (message.classList.contains('show')) {
+                // Nếu lời chúc đang hiện (có class 'show')
+                button.textContent = 'Ẩn lời chúc';
+            } else {
+                // Nếu lời chúc đang ẩn (không có class 'show')
+                button.textContent = 'Nhận lời chúc đặc biệt!';
+            }
+        });
+    </script>
+</body>
+</html>
